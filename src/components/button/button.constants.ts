@@ -4,6 +4,7 @@ export const BUTTON_VARIANTS: Record<ButtonVariant, ButtonVariant> = {
   ghost: 'ghost',
   default: 'default',
   link: 'link',
+  icon: 'icon',
 }
 
 export const BUTTON_SIZES: Record<ButtonSize, ButtonSize> = {

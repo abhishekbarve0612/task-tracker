@@ -1,10 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
-import Dashboard from '@/screenComponents/dashboard'
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute('/create/')({
   component: RouteComponent,
 })
 
 function RouteComponent() {
-  return <Dashboard />
+  return <div>Hello "/create/"!</div>
 }

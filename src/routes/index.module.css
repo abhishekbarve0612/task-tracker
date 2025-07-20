@@ -1,0 +1,29 @@
+.container {
+  background: linear-gradient(135deg, #fafaf9 0%, #fef7cd4d 100%);
+  min-height: 100svh;
+}
+
+.main {
+  max-width: 99svw;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #44403c;
+  letter-spacing: 0.025em;
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  color: #78716c;
+  font-weight: 300;
+  margin-bottom: 16px;
+}

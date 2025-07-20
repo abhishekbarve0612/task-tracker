@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import Toggle from '@components/toggle'
-import styles from './menu.module.css'
-import Button from '../button'
+import { Toggle } from '@/components'
+import styles from './dropdown.module.css'
+import { Button } from '@/components'
 
 export interface MenuProps {
   children: React.ReactNode
@@ -30,18 +30,19 @@ Menu.Button = function MenuButton({ children, className, ...props }: MenuButtonP
   )
 }
 
-interface MenuItemProps {
+interface MenuItemProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode
   className?: string
   isDestructive?: boolean
 }
 
-Menu.Item = function MenuItem({ children, className, isDestructive }: MenuItemProps) {
+Menu.Item = function MenuItem({ children, className, isDestructive, ...props }: MenuItemProps) {
   return (
     <Button
       className={clsx(styles.item, isDestructive && styles.itemDestructive, className)}
       variant="ghost"
       size="sm"
+      {...props}
     >
       {children}
     </Button>

@@ -35,4 +35,7 @@ const Button = ({
   )
 }
 
+Button.Variants = BUTTON_VARIANTS
+Button.Sizes = BUTTON_SIZES
+
 export default Button

@@ -19,22 +19,22 @@
 }
 
 .ghost {
-  color: var(--color-amber-600);
+  color: var(--color-primary-600);
   background: transparent;
 }
 
 .ghost:hover:not(:disabled) {
-  color: var(--color-amber-700);
-  background-color: var(--color-amber-100);
+  color: var(--color-primary-700);
+  background-color: var(--color-primary-100);
 }
 
 .default {
-  background-color: var(--color-amber-600);
+  background-color: var(--color-primary-600);
   color: var(--color-white);
 }
 
 .default:hover:not(:disabled) {
-  background-color: var(--color-amber-700);
+  background-color: var(--color-primary-700);
 }
 
 .sm {
@@ -63,6 +63,25 @@
   flex-shrink: 0;
 }
 
+.newTaskButton {
+  background-color: #059669 !important;
+  color: white !important;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.newTaskButton:hover {
+  background-color: #047857 !important;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
 @media (max-width: 480px) {
   .btn {
     padding: var(--spacing-1);
@@ -82,4 +101,11 @@
 /* Animation for smooth transitions */
 .btn {
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 640px) {
+  .newTaskButton {
+    width: 100%;
+    justify-content: center;
+  }
 }

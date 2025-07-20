@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './select.module.css'
-import { FaCircleChevronDown } from 'react-icons/fa6'
+import { FaChevronDown } from 'react-icons/fa6'
 
 interface SelectProps {
   value: string
@@ -75,7 +75,7 @@ export function SelectTrigger({
       type="button"
     >
       {children}
-      <FaCircleChevronDown className={styles.triggerIcon} />
+      <FaChevronDown className={styles.triggerIcon} />
     </button>
   )
 }

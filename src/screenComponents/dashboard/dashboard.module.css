@@ -1,0 +1,147 @@
+.inlineIcon {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #78716c;
+  margin-bottom: 1rem;
+}
+
+.progressIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.searchWrapper {
+  position: relative;
+  flex: 1;
+  max-width: 448px;
+  width: 100%;
+}
+
+.controlsRight {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.selectWrapper {
+  width: 8rem;
+}
+.newTaskButton {
+  background-color: #059669 !important;
+  color: white !important;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.newTaskButton:hover {
+  background-color: #047857 !important;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Responsive improvements */
+@media (max-width: 640px) {
+  .controls {
+    gap: 0.75rem;
+  }
+
+  .controlsRight {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .selectWrapper {
+    width: 100%;
+  }
+
+  .newTaskButton {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .searchWrapper {
+    max-width: none;
+  }
+
+  .floatingButton {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: #059669;
+    color: white;
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 40;
+    transition: all 0.3s ease;
+  }
+
+  .floatingButton:hover {
+    background-color: #047857;
+    transform: scale(1.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .floatingButton:active {
+    transform: scale(0.95);
+  }
+}
+
+@media (min-width: 640px) {
+  .controls {
+    flex-direction: row;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .searchWrapper {
+    width: 100%;
+  }
+}
