@@ -1,34 +1,62 @@
-import clsx from 'clsx'
-import styles from './toggle.module.css'
-import { FaFileWord, FaMarkdown } from 'react-icons/fa6'
+import React from 'react'
 
-interface Props {
-  isMarkdownMode: boolean
-  onToggle: () => void
-  className?: string
+export interface ToggleState {
+  on: boolean
+  toggle: () => void
 }
 
-function ModeToggle({ isMarkdownMode, onToggle, className = '' }: Props) {
+const ToggleContext = React.createContext<ToggleState>({
+  on: false,
+  toggle: () => {},
+})
+
+export interface ToggleProps {
+  children: React.ReactNode | ((state: ToggleState) => React.ReactNode)
+  onToggle: (on: boolean) => void
+}
+
+function Toggle({ children, onToggle }: ToggleProps) {
+  const [on, setOn] = React.useState(false)
+
+  function toggle() {
+    setOn((prevOn) => !prevOn)
+  }
+
+  React.useEffect(() => {
+    onToggle(on)
+  }, [on])
+
+  const state = { on, toggle }
+
   return (
-    <div className={clsx(styles.modeToggle, className)}>
-      <button
-        onClick={onToggle}
-        className={clsx(styles.modeButton, isMarkdownMode ? styles.active : '')}
-        aria-label="Markdown Mode"
-      >
-        <FaMarkdown />
-        <span>Markdown</span>
-      </button>
-      <button
-        onClick={onToggle}
-        className={clsx(styles.modeButton, !isMarkdownMode ? styles.active : '')}
-        aria-label="Direct Styling Mode"
-      >
-        <FaFileWord />
-        <span>Direct</span>
-      </button>
-    </div>
+    <ToggleContext.Provider value={state}>
+      {typeof children === 'function' ? children(state) : children}
+    </ToggleContext.Provider>
   )
 }
 
-export default ModeToggle
+Toggle.On = function On({ children }: { children: React.ReactNode }) {
+  const { on } = React.useContext(ToggleContext)
+  return on ? children : null
+}
+
+Toggle.Off = function Off({ children }: { children: React.ReactNode }) {
+  const { on } = React.useContext(ToggleContext)
+  return on ? null : children
+}
+
+Toggle.Button = function Button({
+  children,
+  ...props
+}: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+  const { toggle } = React.useContext(ToggleContext)
+  return (
+    <button onClick={toggle} {...props}>
+      {children}
+    </button>
+  )
+}
+
+export default Toggle
+
+export { ToggleContext }
