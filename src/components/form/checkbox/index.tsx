@@ -8,7 +8,7 @@ interface CheckboxProps extends React.HTMLAttributes<HTMLButtonElement> {
   className?: string
 }
 
-export function Checkbox({ checked, onCheckedChange, className = '', ...props }: CheckboxProps) {
+function Checkbox({ checked, onCheckedChange, className = '', ...props }: CheckboxProps) {
   const handleClick = () => {
     onCheckedChange(!checked)
   }
@@ -41,3 +41,5 @@ export function Checkbox({ checked, onCheckedChange, className = '', ...props }:
     </button>
   )
 }
+
+export default Checkbox
