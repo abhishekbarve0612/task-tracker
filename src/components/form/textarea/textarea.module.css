@@ -1,0 +1,19 @@
+.textarea {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1.7;
+  resize: none;
+  width: 100%;
+  min-height: 500px;
+  color: var(--color-amber-900);
+  font-family: var(--font-serif);
+  background: 0 0;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.editorTextArea {
+  padding: var(--spacing-6);
+}
