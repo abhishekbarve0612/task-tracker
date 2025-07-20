@@ -9,7 +9,7 @@ import type { Task } from '@/lib/types'
 import styles from './createTask.module.css'
 import type { TaskFormData } from '../taskForm'
 
-export function CreateTaskScreen() {
+function CreateTaskScreen() {
   const router = useRouter()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [task, setTask] = useState<TaskFormData>({
@@ -218,3 +218,5 @@ export function CreateTaskScreen() {
     </div>
   )
 }
+
+export default CreateTaskScreen

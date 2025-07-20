@@ -8,10 +8,10 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 function Input({ className, icon, ...props }: InputProps) {
   return (
-    <div className={clsx(styles.inputContainer, className)}>
+    <>
       {icon && <div className={styles.inputIcon}>{icon}</div>}
-      <input className={clsx(styles.input, icon && styles.inputWithIcon)} {...props} />
-    </div>
+      <input className={clsx(styles.input, icon && styles.inputWithIcon, className)} {...props} />
+    </>
   )
 }
 

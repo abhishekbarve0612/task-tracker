@@ -33,6 +33,10 @@
   --border-radius: 0.5rem;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -91,6 +95,7 @@ body {
   color: #44403c;
   background: linear-gradient(135deg, #fafaf9 0%, #fef7cd 100%);
   min-height: 100vh;
+  color-scheme: light;
 }
 
 #root {

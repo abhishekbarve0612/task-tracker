@@ -9,6 +9,7 @@
   font-size: 0.875rem;
   transition: all 0.2s ease;
   outline: none;
+  color-scheme: 'light';
 }
 
 .input:focus {
