@@ -1,5 +1,3 @@
-'use client'
-
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './select.module.css'
 import { FaChevronDown } from 'react-icons/fa6'
