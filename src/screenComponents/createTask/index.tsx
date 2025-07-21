@@ -124,7 +124,10 @@ function CreateTaskScreen() {
                 onValueChange={(value) => setTask({ ...task, category: value })}
               >
                 <Form.Select.Trigger>
-                  <Form.Select.Value />
+                  <Form.Select.Value
+                    placeholder="Select a category"
+                    value={selectedCategory?.label}
+                  />
                 </Form.Select.Trigger>
                 <Form.Select.Content>
                   {categories.map((category) => (
@@ -155,7 +158,10 @@ function CreateTaskScreen() {
                 }
               >
                 <Form.Select.Trigger>
-                  <Form.Select.Value />
+                  <Form.Select.Value
+                    placeholder="Select a priority"
+                    value={selectedPriority?.label}
+                  />
                 </Form.Select.Trigger>
                 <Form.Select.Content>
                   {priorities.map((priority) => (

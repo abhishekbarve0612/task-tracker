@@ -4,7 +4,7 @@ import { Button, Form, Dialog } from '@/components'
 import TaskForm, { TaskFormData } from '@/screenComponents/taskForm'
 import { TaskCard } from '@/screenComponents/taskCard'
 import type { Task } from '@/lib/types'
-import { categories } from '@/lib/constants'
+import { categories, categoriesMap } from '@/lib/constants'
 import styles from './dashboard.module.css'
 import { EmptyState } from '@/screenComponents/emptyState'
 import { useRouter } from '@tanstack/react-router'
@@ -14,7 +14,7 @@ function Dashboard() {
   const router = useRouter()
   const [tasks, setTasks] = useState<Task[]>([])
   const [searchQuery, setSearchQuery] = useState('')
-  const [selectedCategory, setSelectedCategory] = useState<string>('all')
+  const [selectedCategory, setSelectedCategory] = useState<string>(categoriesMap.all)
   const [editingTask, setEditingTask] = useState<Task | null>(null)
   const [newTask, setNewTask] = useState<TaskFormData>({
     title: '',
@@ -131,9 +131,12 @@ function Dashboard() {
 
         <div className={styles.controlsRight}>
           <div className={styles.selectWrapper}>
-            <Form.Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <Form.Select
+              value={categoriesMap[selectedCategory]}
+              onValueChange={setSelectedCategory}
+            >
               <Form.Select.Trigger>
-                <Form.Select.Value />
+                <Form.Select.Value placeholder="All" value={categoriesMap[selectedCategory]} />
               </Form.Select.Trigger>
               <Form.Select.Content>
                 <Form.Select.Item value="all">All</Form.Select.Item>

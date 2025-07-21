@@ -7,6 +7,14 @@ export const categories: Category[] = [
   { value: 'learning', label: 'Learning', color: 'violet' },
 ]
 
+export const categoriesMap = {
+  all: 'All',
+  personal: 'Personal',
+  work: 'Work',
+  health: 'Health',
+  learning: 'Learning',
+}
+
 export const priorities: Priority[] = [
   { value: 'low', label: 'Low', color: 'slate' },
   { value: 'medium', label: 'Medium', color: 'orange' },
